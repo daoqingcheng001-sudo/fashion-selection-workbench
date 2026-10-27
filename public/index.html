@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fashion Studio · 女装选款工作台</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <aside>
+    <div class="brand"><div class="brand-lockup"><img class="brand-logo" src="/favicon.svg" alt="Fashion Studio Logo"><b>Fashion Studio</b></div><span>FASHION · SELECTION STUDIO</span></div>
+    <p class="rail-label">女装选款工作流</p>
+    <nav id="nav" aria-label="工作台导航">
+      <button data-page="rules" class="active"><span class="nav-number">01</span><span>渠道与规则<small>来源链接 · 选款条件</small></span></button>
+      <button data-page="collection"><span class="nav-number">02</span><span>查看与审核<small>图片核验 · 确认选款</small></span></button>
+      <button data-page="approved"><span class="nav-number">03</span><span>已确认与交付<small>批量打包 · 图文表格</small></span></button>
+      <button data-page="designs"><span class="nav-number">04</span><span>改款与生图<small>调取原款 · 设计参考</small></span></button>
+      <span class="nav-divider" aria-hidden="true"></span>
+      <button data-page="styles" class="nav-secondary"><span aria-hidden="true">◇</span>风格参考库</button>
+      <button data-page="admin" class="nav-secondary" id="admin-nav" hidden><span aria-hidden="true">⚙</span>成员与后台</button>
+    </nav>
+    <div class="rail-bottom"><span class="dot"></span> 共享数据库 · 操作可追溯<br><small>独立账号 · 编辑冲突保护</small></div>
+  </aside>
+  <main>
+    <header>
+      <div><span class="eyebrow">FASHION RESEARCH / WORKSPACE</span><h1 id="page-title">渠道与规则</h1><p id="page-description" class="page-description">输入来源链接，把选款思路变成可复用规则。</p></div>
+      <div class="account-tools"><label class="reviewer">当前登录成员<input id="reviewer" readonly aria-label="当前登录成员"></label><span id="account-role" class="tag"></span><button id="open-guide" class="quiet">操作指南</button><button id="change-password" class="quiet">修改密码</button><button id="logout" class="quiet">退出</button></div>
+    </header>
+    <div id="notice" role="status"></div>
+    <section id="task-context" aria-label="当前任务"></section>
+    <div id="workflow-progress" aria-label="四步选款流程"></div>
+    <section id="content"></section>
+  </main>
+  <dialog id="detail"><div id="detail-body"></div></dialog>
+  <div id="toast" role="status"></div>
+  <div id="auth-gate" class="auth-screen"><div class="auth-card"><img class="auth-logo" src="/favicon.svg" alt="Fashion Studio Logo"><h1>Fashion Studio选款工作台</h1><p class="hint">正在连接后台…</p></div></div>
+  <script src="/auth.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

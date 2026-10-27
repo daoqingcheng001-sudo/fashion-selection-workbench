@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh"><meta charset="utf-8"><title>Fashion Studio采集助手</title>
+<style>
+body{width:360px;padding:16px;margin:0;font:13px -apple-system,sans-serif;color:#292533}h2{font-size:19px;margin:0}header{display:flex;align-items:center;gap:12px;margin-bottom:16px}header img{width:48px;height:48px;border-radius:10px}label{display:block;margin:12px 0 6px;color:#625b6d}input:not([type=checkbox]){width:100%;box-sizing:border-box;padding:9px;border:1px solid #d8d3df;border-radius:7px;font:inherit}button{padding:11px;margin:0;border:0;border-radius:7px;background:#6b4dde;color:white;font:inherit;cursor:pointer}button:disabled{opacity:.45;cursor:default}.actions{display:flex;gap:7px;margin:15px 0}p{line-height:1.65;color:#776d81;margin:8px 0}.status-box{background:#f4f1fa;border:1px solid #e6e0f0;border-radius:8px;padding:11px}#status{color:#554269;white-space:pre-wrap;margin:6px 0}#updated,.hint{font-size:12px}#running-state{font-weight:600}.check{display:flex;align-items:flex-start;gap:6px;line-height:1.6}.check input{margin-top:4px}#recovery-note,#collector-warning{background:#fff0d5;color:#855514;padding:8px;border-radius:6px}details{margin:12px 0}summary{cursor:pointer;color:#625b6d}.steps{font-size:12px}
+</style>
+<header><img src="favicon.svg" alt="Fashion Studio Logo"><h2>选款采集助手</h2></header>
+<p class="steps">① 在工作台创建任务并复制配对信息<br>② 选中 SHEIN 美国站标签页<br>③ 点击继续采集，完成后回工作台审核</p>
+<label for="base">工作台地址（含端口）</label><input id="base" placeholder="http://127.0.0.1:8770">
+<label for="key">本次任务配对码</label><input id="key" type="password" autocomplete="off">
+<label for="job">任务 ID（可留空，按配对码自动识别）</label><input id="job">
+<div id="recovery-note" hidden>此任务曾遇到访问限制。请先完成平台正常恢复；不要反复刷新受限页面。</div>
+<details><summary>恢复访问或补采缺图时使用</summary>
+<label class="check"><input type="checkbox" id="recovery">我已通过平台正常入口恢复，当前页面已恢复正常</label>
+<label class="check"><input type="checkbox" id="retry-missing">补采未下载原图（不会重复采集仅待分配正背面的完整图库）</label>
+</details>
+<div class="actions"><button id="start">继续采集</button><button id="capture" disabled>保存当前页</button><button id="stop" disabled>暂停</button></div>
+<div class="status-box" role="status" aria-live="polite"><span id="running-state">未运行</span><p id="status"></p><p id="image-status" class="hint"></p><p id="collector-warning" hidden></p><span id="updated" class="hint"></span></div>
+<p class="hint">只读取公开商品与图片，保存到指定工作台；不读取密码或 Cookie。登录、验证或访问限制时停止，恢复后由你明确继续。</p>
+<script src="popup.js"></script></html>

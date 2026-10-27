@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Fashion Studio · SHEIN选款采集助手",
+  "version": "0.2.1",
+  "description": "在已登录的美国站Chrome中采集公开商品与图片，保存到本机选款工作台。验证时暂停，不读取密码或Cookie。",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://us.shein.com/*",
+    "https://img.ltwebstatic.com/*",
+    "http://127.0.0.1/*"
+  ],
+  "background": {
+    "service_worker": "worker.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "favicon.svg"
+    }
+  },
+  "icons": {
+    "128": "favicon.svg"
+  },
+  "optional_host_permissions": [
+    "http://*/*"
+  ]
+}
